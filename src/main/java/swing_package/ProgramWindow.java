@@ -10,7 +10,7 @@ public class ProgramWindow {
     JPanel coordinates = new JPanel();;
 
     public void display(){
-        frame = new JFrame("Register");
+        frame = new JFrame("program");
         frame.setSize(500, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
@@ -30,12 +30,14 @@ public class ProgramWindow {
 
         panelLeft.setBackground(Color.GREEN);
         panelBottom.setBackground(Color.RED);
-        coordinates.setBackground(Color.BLUE);
 
-        frame.getContentPane().add(BorderLayout.PAGE_START, jMenuBar);
-        frame.add(panelLeft, BorderLayout.LINE_START);
-        frame.add(panelBottom, BorderLayout.PAGE_END);
-       frame.add(coordinates, BorderLayout.CENTER);
+        //MyComponent component = new MyComponent();
+        //coordinates.add(component);
+
+        //frame.getContentPane().add(BorderLayout.PAGE_START, jMenuBar);
+        //frame.add(panelLeft, BorderLayout.LINE_START);
+        //frame.add(panelBottom, BorderLayout.PAGE_END);
+        frame.add(coordinates);
 
         frame.setVisible(true);
     }
