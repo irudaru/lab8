@@ -58,7 +58,7 @@ public class RegisterWindow {
         public void actionPerformed(ActionEvent actionEvent) {
             LoginWindow obj = new LoginWindow();
             obj.display();
-            frame.setVisible(false);
+            frame.dispose();
         }
     }
 

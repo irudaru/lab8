@@ -5,9 +5,9 @@ import java.awt.*;
 
 public class ProgramWindow {
     JFrame frame;
-    JPanel panelLeft;
-    JPanel panelBottom;
-    JPanel coordinates;
+    JPanel panelLeft = new JPanel();
+    JPanel panelBottom = new JPanel();;
+    JPanel coordinates = new JPanel();;
 
     public void display(){
         frame = new JFrame("Register");
@@ -28,14 +28,14 @@ public class ProgramWindow {
         language.add(langRus);
         language.add(LangEng);
 
-        //panelLeft.setBackground(Color.GREEN);
-        //panelBottom.setBackground(Color.RED);
-        //coordinates.setBackground(Color.BLUE);
+        panelLeft.setBackground(Color.GREEN);
+        panelBottom.setBackground(Color.RED);
+        coordinates.setBackground(Color.BLUE);
 
-        //frame.getContentPane().add(BorderLayout.PAGE_START, jMenuBar);
+        frame.getContentPane().add(BorderLayout.PAGE_START, jMenuBar);
         frame.add(panelLeft, BorderLayout.LINE_START);
-        //frame.add(panelBottom, BorderLayout.PAGE_END);
-        //frame.add(coordinates, BorderLayout.CENTER);
+        frame.add(panelBottom, BorderLayout.PAGE_END);
+       frame.add(coordinates, BorderLayout.CENTER);
 
         frame.setVisible(true);
     }

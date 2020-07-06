@@ -37,7 +37,7 @@ public class PortWindow {
         public void actionPerformed(ActionEvent actionEvent) {
             LoginWindow o = new LoginWindow();
             o.display();
-            frame.setVisible(false);
+            frame.dispose();
         }
     }
 

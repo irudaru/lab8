@@ -34,7 +34,7 @@ public class AlarmWindow {
     class  Okbutton implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            frame.setVisible(false);
+            frame.dispose();
         }
     }
 

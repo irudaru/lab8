@@ -66,7 +66,7 @@ public class LoginWindow {
         public void actionPerformed(ActionEvent actionEvent) {
             ProgramWindow obj = new ProgramWindow();
             obj.display();
-            frame.setVisible(false);
+            frame.dispose();
         }
     }
 }
