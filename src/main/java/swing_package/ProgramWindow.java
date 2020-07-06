@@ -20,14 +20,21 @@ public class ProgramWindow {
     JButton min_by_creation_date = new JButton("min by creation_date");
     JButton print_field_ascending_distance = new JButton("print field ascending distance");
 
+    UsersTableModel utm = new UsersTableModel();
+    JTable users = new JTable(utm);
+    JScrollPane usersScrollPane = new JScrollPane(users);
+
+    JTable Routes = new JTable();
+    JScrollPane RoutesScrollPane = new JScrollPane(Routes);
+
     public void display(){
         frame = new JFrame("program");
         frame.setSize(700, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setLayout(new BorderLayout());
-        panelLeft.setLayout(new GridLayout(10, 1, 10, 0));
 
+        panelLeft.setLayout(new GridLayout(10, 1, 10, 0));
         add.setPreferredSize(print_field_ascending_distance.getPreferredSize());
         panelLeft.add(add);
         update.setPreferredSize(print_field_ascending_distance.getPreferredSize());
