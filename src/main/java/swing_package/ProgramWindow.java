@@ -2,6 +2,8 @@ package swing_package;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ProgramWindow {
     JFrame frame;
@@ -60,14 +62,37 @@ public class ProgramWindow {
         JMenuBar jMenuBar = new JMenuBar();
         JMenu file = new JMenu("FILE");
         JMenu language = new JMenu("language");
+        JMenuItem help = new JMenuItem("HELP");
         jMenuBar.add(file);
         jMenuBar.add(language);
+        jMenuBar.add(help);
         JMenuItem exit = new JMenuItem("Exit");
         JMenuItem langRus = new JMenuItem("Русский");
         JMenuItem LangEng = new JMenuItem("English");
+        JMenuItem logout = new JMenuItem("log Out");
+        file.add(logout);
+        file.addSeparator();
         file.add(exit);
         language.add(langRus);
         language.add(LangEng);
+
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                frame.dispose();
+                NewPortWindow o = new NewPortWindow();
+                o.display();
+            }
+        });
+
+        logout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                frame.dispose();
+                LoginWindow o = new LoginWindow();
+                o.display();
+            }
+        });
 
         panelLeft.setBackground(Color.GREEN);
         panelBottom.setBackground(Color.RED);
@@ -79,6 +104,15 @@ public class ProgramWindow {
         frame.add(panelLeft, BorderLayout.LINE_START);
         frame.add(panelBottom, BorderLayout.PAGE_END);
         frame.add(coordinates);
+
+        add.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                //do something
+                SetObjectWindow o = new SetObjectWindow();
+                o.display();
+            }
+        });
 
         frame.setVisible(true);
     }

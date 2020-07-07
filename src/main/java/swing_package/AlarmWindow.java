@@ -8,24 +8,23 @@ import javax.swing.ImageIcon;
 
 
 public class AlarmWindow {
-    JFrame frame = new JFrame();
+    JFrame frame;
     JLabel label = new JLabel();
-    JButton okButton = new JButton("ok");
-    JPanel panel = new JPanel();
 
     public void display(String title, String message){
-        frame.setTitle(title);
+        frame = new JFrame(title);
         label.setText(message);
+        frame.setSize(350, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        frame.setSize(250,200);
-        panel.setLayout(new BorderLayout());
+        JPanel panel = new JPanel();
 
-        Font font = new Font("Verdana", Font.PLAIN,25);
+        Font font = new Font("Verdana", Font.PLAIN,20);
         label.setFont(font);
 
-        panel.add(label, BorderLayout.PAGE_START);
-        panel.add(okButton, BorderLayout.PAGE_END);
+        label.setBounds(60, 120, 130, 25);
+
+        panel.add(label);
         frame.add(panel);
 
         frame.setVisible(true);
