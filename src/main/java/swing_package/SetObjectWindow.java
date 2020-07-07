@@ -12,7 +12,6 @@ public class SetObjectWindow {
     public void display(){
         frame = new JFrame("setObject");
         frame.setSize(350, 530);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();

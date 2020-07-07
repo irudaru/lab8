@@ -15,7 +15,6 @@ public class AlarmWindow {
         frame = new JFrame(title);
         label.setText(message);
         frame.setSize(350, 200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         JPanel panel = new JPanel();
 

@@ -22,21 +22,17 @@ public class ProgramWindow {
     JButton min_by_creation_date = new JButton("min by creation_date");
     JButton print_field_ascending_distance = new JButton("print field ascending distance");
 
-    UsersTableModel utm = new UsersTableModel();
-    JTable users = new JTable(utm);
-    JScrollPane usersScrollPane = new JScrollPane(users);
-
     JTable Routes = new JTable();
     JScrollPane RoutesScrollPane = new JScrollPane(Routes);
 
     public void display(){
         frame = new JFrame("program");
-        frame.setSize(700, 500);
+        frame.setSize(700, 550);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setLayout(new BorderLayout());
 
-        panelLeft.setLayout(new GridLayout(10, 1, 10, 0));
+        panelLeft.setLayout(new GridLayout(15, 1, 10, 0));
         add.setPreferredSize(print_field_ascending_distance.getPreferredSize());
         panelLeft.add(add);
         update.setPreferredSize(print_field_ascending_distance.getPreferredSize());
@@ -63,8 +59,10 @@ public class ProgramWindow {
         JMenu file = new JMenu("FILE");
         JMenu language = new JMenu("language");
         JMenuItem help = new JMenuItem("HELP");
+        JMenuItem show = new JMenuItem("routes");
         jMenuBar.add(file);
         jMenuBar.add(language);
+        jMenuBar.add(show);
         jMenuBar.add(help);
         JMenuItem exit = new JMenuItem("Exit");
         JMenuItem langRus = new JMenuItem("Русский");
@@ -75,6 +73,15 @@ public class ProgramWindow {
         file.add(exit);
         language.add(langRus);
         language.add(LangEng);
+
+
+        show.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                RoutesTable o = new RoutesTable();
+                o.display();
+            }
+        });
 
         exit.addActionListener(new ActionListener() {
             @Override
@@ -94,16 +101,11 @@ public class ProgramWindow {
             }
         });
 
-        panelLeft.setBackground(Color.GREEN);
-        panelBottom.setBackground(Color.RED);
+        panelLeft.setBackground(Color.GRAY);
+        panelBottom.setBackground(Color.DARK_GRAY);
 
         MyComponent component = new MyComponent();
         coordinates.add(component);
-
-        frame.getContentPane().add(BorderLayout.PAGE_START, jMenuBar);
-        frame.add(panelLeft, BorderLayout.LINE_START);
-        frame.add(panelBottom, BorderLayout.PAGE_END);
-        frame.add(coordinates);
 
         add.addActionListener(new ActionListener() {
             @Override
@@ -114,6 +116,15 @@ public class ProgramWindow {
             }
         });
 
+        frame.getContentPane().add(BorderLayout.PAGE_START, jMenuBar);
+        frame.add(panelLeft, BorderLayout.LINE_START);
+        frame.add(coordinates, BorderLayout.CENTER);
+
         frame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        ProgramWindow o = new ProgramWindow();
+        o.display();
     }
 }
